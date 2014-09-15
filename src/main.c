@@ -25,7 +25,8 @@ int menu(void){
 			"\t1. Add student information (name, UID#, and email)\n"
 			"\t2. Enter grades for student\n"
 			"\t3. Search for student\n"
-			"\t4. View student information\n\n"
+			"\t4. View student information\n"
+			"\t5. Delete a student\n\n"
 			"Enter an option number here: ");
 			
 	scanf("%d", &choice);
@@ -44,6 +45,7 @@ int main(int argc, char* argv) {
 		case 2:	// Module that searches for a student in the database
 		case 3:	// Module that sorts the students in the database according to name, email, or UID#
 		case 4:	// Module that prints all students currently in database to screen
+		case 5: // Module that allows the user to delete a student from the database
 		default: printf("Please enter a valid option number\n\n");
 	}
 	
