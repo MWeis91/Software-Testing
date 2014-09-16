@@ -1,19 +1,19 @@
+
 // This is the main program file.
+//
+// It directs the user to several subroutines which perform operations on the database of students.
+//
+// The database of students is denoted by Student s[100], with students 0-99.
+//
+
 
 
 
 #include "stdlib.h"
 #include "stdio.h"
+#include "input.h" // Links to main.h, provides typedef student(bad design)
 
-struct Student
-{
-	char name[40];
-	char ID[10];
-	char email[40];
-	int essayGrade1;
-	int essayGrade2;
-	int termProject;
-};
+
 
 int menu(void){
 	int choice=0;
@@ -33,16 +33,25 @@ int menu(void){
 	return choice;
 }
 
-int main(int argc, char* argv) {
+int main(int argc, char ** argv) {
 	
 	// array of type Student
-	struct Student s[100];
+	Student s[100];
 	int menuOpt;
 	
 	menuOpt = menu();
 	switch (menuOpt){
 		case 1:	// Module that handles entering the student's basic information (name, email, UID#)
+		  newStudent(s);
+		  break;
+
 		case 2:	// Module that searches for a student in the database
+
+		  // search(s);
+
+
+
+
 		case 3:	// Module that sorts the students in the database according to name, email, or UID#
 		case 4:	// Module that prints all students currently in database to screen
 		case 5: // Module that allows the user to delete a student from the database
