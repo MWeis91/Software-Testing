@@ -13,7 +13,7 @@ struct Student
 	int essayGrade1;
 	int essayGrade2;
 	int termProject;
-}
+};
 
 int menu(void){
 	int choice=0;
