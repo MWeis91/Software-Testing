@@ -97,7 +97,7 @@ void viewStudent(Student *s)
    if (index == 100)
    {
       printf("Matching student not found.\n");
-	  return;
+      return;
    }
    tmp = tmp + sizeof(Student)*index;
    
