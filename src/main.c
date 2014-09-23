@@ -66,13 +66,15 @@ int main(int argc, char ** argv) {
 				break;
         	case 6: // (TODO) Delete a student
         	    
-        	    break;
+                break;
 				
-			case 7: // Exit
-			    terminateflag = 1;
+            case 7: // Exit
+                terminateflag = 1;
+                break;
+				
+        	default: 
+			    printf("Please enter a valid option number.\n\n");
 				break;
-				
-        	default: printf("Please enter a valid option number.\n\n");
 	    }
 	
 	}

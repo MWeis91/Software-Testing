@@ -15,10 +15,10 @@ void newStudent(Student* S) {
   Student* tmp = S;
 
   while (tmp->allocated == 123456)
-	{
-	   tmp = tmp + sizeof(Student);
-	   i++;
-	}
+  {
+    tmp = tmp + sizeof(Student);
+	i++;
+  }
 
   printf("\nCreating new student in slot %d/100\n\n",i+1); 
 
@@ -88,7 +88,7 @@ void enterGrades(Student* S) {
       case 2:
 	     tmp->essayGrade2 = getGrade();
 	     break;
-	  case 3:
+      case 3:
 	     tmp->termProject = getGrade();
          break;	  
    }
