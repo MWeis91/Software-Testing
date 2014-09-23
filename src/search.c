@@ -11,7 +11,7 @@ int getIndexByName(Student* s)
    printf("Please enter a name: ");
    fgets(input, 40, stdin);
    
-   while (!strcmp(tmp->name, input) && i<100)
+   while (!strcmp(tmp->name, input) && i<100 && !tmp->allocated)
    {
       tmp = tmp + sizeof(Student);
 	  i++;
@@ -29,7 +29,7 @@ int getIndexByID(Student* s)
    printf("Please enter an ID to search for: ");
    fgets(input, 10, stdin);
    
-   while (!strcmp(tmp->ID, input))
+   while (!strcmp(tmp->ID, input) && i<100 && !tmp->allocated)
    {
       tmp = tmp + sizeof(Student);
 	  i++;
@@ -46,7 +46,7 @@ int getIndexByEmail(Student* s)
    printf("Please enter an ID to search for: ");
    fgets(input, 40, stdin);
    
-   while (!strcmp(tmp->email, input))
+   while (!strcmp(tmp->email, input) && i<100 && !tmp->allocated)
    {
       tmp = tmp + sizeof(Student);
 	  i++;
@@ -94,6 +94,11 @@ void viewStudent(Student *s)
    
    // get student index
    int index = getStudentIndex(s);
+   if (index == 100)
+   {
+      printf("Matching student not found.\n");
+	  return;
+   }
    tmp = tmp + sizeof(Student)*index;
    
    // display record

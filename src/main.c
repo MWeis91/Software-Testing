@@ -13,7 +13,7 @@
 #include "stdio.h"
 #include "input.h" // Links to main.h, provides typedef student(bad design)
 #include "search.h"
-
+#include "delete.h"
 
 int menu(void){
 	int choice=0;
@@ -65,7 +65,7 @@ int main(int argc, char ** argv) {
 				enterGrades(s);
 				break;
         	case 6: // (TODO) Delete a student
-        	    
+        	    deleteStudent(s);
                 break;
 				
             case 7: // Exit
