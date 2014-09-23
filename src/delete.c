@@ -3,6 +3,13 @@
 #include "main.h"
 #include "stdio.h"
 
+void sortArray(Student* s)
+{
+   // scan for deallocated block followed by allocated data blocks
+   // move everything after that down a block
+   // repeat
+}
+
 void deleteStudent(Student* s)
 {
    int index = 0;
@@ -23,7 +30,7 @@ void deleteStudent(Student* s)
       // deallocate that entry
 	  tmp->allocated=0;
    
-      // Sort the array to eliminate the deallocated entry
+      // eliminate the deallocated entry from our array
    }
     
 }
