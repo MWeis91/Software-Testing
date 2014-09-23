@@ -61,8 +61,8 @@ int getStudentIndex(Student* s)
    // Search by name, id, email
    printf("Search students by\n"
       "\t1. name\n"
-	  "\t2. ID number\n"
-	  "\t3. email address\n");
+      "\t2. ID number\n"
+      "\t3. email address\n");
 	  
 	printf("\t");
 	scanf("%d", &choice);
@@ -70,18 +70,18 @@ int getStudentIndex(Student* s)
 	
 	switch (choice){
 	
-	   case 1:
-	      return getIndexByName(s);
-	      break;
-	   case 2:
-	      return getIndexByID(s);
-	      break;
-	   case 3:
-	      return getIndexByEmail(s);
-	      break;
-	   default:
-	      printf("Invalid choice. Try again.\n");
-          break;
+      case 1:
+         return getIndexByName(s);
+         break;
+      case 2:
+         return getIndexByID(s);
+         break;
+      case 3:
+         return getIndexByEmail(s);
+         break;
+      default:
+         printf("Invalid choice. Try again.\n");
+         break;
 	}
 	
 	// error code
@@ -104,9 +104,9 @@ void viewStudent(Student *s)
    // display record
    printf("\n\tName: %s"
          "\tID: %s"
-		 "\tEmail: %s"
-		 "\tEssay 1: %d"
-		 "\n\tEssay 2: %d"
-		 "\n\tTerm Project: %d\n\n", tmp->name, tmp->ID, tmp->email, tmp->essayGrade1, tmp->essayGrade2, tmp->termProject);
+         "\tEmail: %s"
+         "\tEssay 1: %d"
+         "\n\tEssay 2: %d"
+         "\n\tTerm Project: %d\n\n", tmp->name, tmp->ID, tmp->email, tmp->essayGrade1, tmp->essayGrade2, tmp->termProject);
    
 }
