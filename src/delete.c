@@ -28,7 +28,7 @@ void deleteStudent(Student* s)
    if (confirmation == 'y')
    {
       // deallocate that entry
-	  tmp->allocated=0;
+      tmp->allocated=0;
    
       // eliminate the deallocated entry from our array
    }

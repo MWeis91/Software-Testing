@@ -17,7 +17,7 @@ void newStudent(Student* S) {
   while (tmp->allocated == 123456)
   {
     tmp = tmp + sizeof(Student);
-	i++;
+    i++;
   }
 
   printf("\nCreating new student in slot %d/100\n\n",i+1); 
