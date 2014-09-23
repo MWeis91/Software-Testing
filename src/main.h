@@ -1,3 +1,6 @@
+#ifndef MAIN_H
+#define MAIN_H
+
 
 // Globally defined Student structure.
 //
@@ -8,7 +11,7 @@
 
 
 typedef struct {
-
+	int allocated;
 	char name[40];
 	char ID[10];
 	char email[40];
@@ -16,3 +19,4 @@ typedef struct {
 	int essayGrade2;
 	int termProject;
 } Student;
+#endif
