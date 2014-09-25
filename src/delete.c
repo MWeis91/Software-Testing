@@ -2,6 +2,8 @@
 #include "search.h"
 #include "main.h"
 #include "stdio.h"
+#include "delete.h"
+
 
 void sortArray(Student* s)
 {
