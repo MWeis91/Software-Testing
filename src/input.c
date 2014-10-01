@@ -21,7 +21,7 @@ void saveDB(Student* s)
 {
    FILE* studentsdb = fopen("students.db", "w");
 
-   printf("Saving student databse to students.db....\n");
+   printf("Saving student database to students.db...\n");
 
    fwrite(s, sizeof(Student), 100, studentsdb);
 }
