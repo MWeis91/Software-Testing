@@ -16,7 +16,7 @@ void newStudent(Student* S) {
 
   while (tmp->allocated == 123456)
   {
-    tmp = tmp + sizeof(Student);
+    tmp = tmp + 1;
     i++;
   }
 
@@ -69,7 +69,7 @@ void enterGrades(Student* S) {
    int index = 0;
    
    index = getStudentIndex(S);
-   tmp = tmp + sizeof(Student) * index;
+   tmp = tmp + index;
    
    // Choose grade to change.
    printf("\nChoose a grade to change: "

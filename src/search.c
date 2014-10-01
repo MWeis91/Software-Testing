@@ -5,18 +5,17 @@
 int getIndexByName(Student* s)
 {
    Student* tmp = s;
-   int i;
+   int i = 0;
    char input[40];
    
    printf("Please enter a name: ");
    fgets(input, 40, stdin);
 
-   while ( strncmp(tmp->name, input, 40) && i<100)
+   while ( strcmp(tmp->name, input) && i<100)
    {
-      tmp = tmp + sizeof(Student);
+      tmp = tmp + 1;
       i++;
    }
-
    return i;
    // 100 = ERROR!
 }
@@ -24,7 +23,7 @@ int getIndexByName(Student* s)
 int getIndexByID(Student* s)
 {
    Student* tmp = s;
-   int i;
+   int i = 0;
    char input[10];
    
    printf("Please enter an ID to search for: ");
@@ -32,8 +31,8 @@ int getIndexByID(Student* s)
    
    while (strcmp(tmp->ID, input) && i<100)
    {
-      tmp = tmp + sizeof(Student);
-	  i++;
+      tmp = tmp + 1;
+      i++;
    }
    return i;
 }
@@ -41,7 +40,7 @@ int getIndexByID(Student* s)
 int getIndexByEmail(Student* s)
 {
    Student* tmp = s;
-   int i;
+   int i = 0;
    char input[40];
    
    printf("Please enter an ID to search for: ");
@@ -49,8 +48,8 @@ int getIndexByEmail(Student* s)
    
    while (strcmp(tmp->email, input) && i<100)
    {
-      tmp = tmp + sizeof(Student);
-	  i++;
+      tmp = tmp + 1;
+      i++;
    }
    return i;
 }
@@ -63,30 +62,27 @@ int getStudentIndex(Student* s)
    printf("Search students by\n"
       "\t1. name\n"
       "\t2. ID number\n"
-      "\t3. email address\n");
+      "\t3. email address\n\n");
 	  
-	printf("\t");
-	scanf("%d", &choice);
-	getchar();
+   printf("\t");
+   scanf("%d", &choice);
+   getchar();
 	
-	switch (choice){
+   switch (choice){
 	
       case 1:
          return getIndexByName(s);
-         break;
       case 2:
          return getIndexByID(s);
-         break;
       case 3:
          return getIndexByEmail(s);
-         break;
       default:
          printf("Invalid choice. Try again.\n");
          break;
-	}
+   }
 	
-	// error code
-	return -1;
+      // error code
+      return -1;
 }
 
 void viewStudent(Student *s)
@@ -100,14 +96,13 @@ void viewStudent(Student *s)
       printf("Matching student not found.\n");
       return;
    }
-   tmp = tmp + sizeof(Student)*index;
+   tmp = tmp + index;
    
    // display record
    printf("\n\tName: %s"
-         "\tID: %s"
-         "\tEmail: %s"
-         "\tEssay 1: %d"
+         "\n\tID: %s"
+         "\n\tEmail: %s"
+         "\n\tEssay 1: %d"
          "\n\tEssay 2: %d"
          "\n\tTerm Project: %d\n\n", tmp->name, tmp->ID, tmp->email, tmp->essayGrade1, tmp->essayGrade2, tmp->termProject);
-   
 }
