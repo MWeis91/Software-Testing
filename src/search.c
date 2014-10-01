@@ -4,32 +4,33 @@
 
 int getIndexByName(Student* s)
 {
-   Student* tmp;
+   Student* tmp = s;
    int i;
    char input[40];
    
    printf("Please enter a name: ");
    fgets(input, 40, stdin);
-   
-   while (!strcmp(tmp->name, input) && i<100)
+
+   while ( strncmp(tmp->name, input, 40) && i<100)
    {
       tmp = tmp + sizeof(Student);
-	  i++;
+      i++;
    }
+
    return i;
    // 100 = ERROR!
 }
 
 int getIndexByID(Student* s)
 {
-   Student* tmp;
+   Student* tmp = s;
    int i;
    char input[10];
    
    printf("Please enter an ID to search for: ");
    fgets(input, 10, stdin);
    
-   while (!strcmp(tmp->ID, input) && i<100)
+   while (strcmp(tmp->ID, input) && i<100)
    {
       tmp = tmp + sizeof(Student);
 	  i++;
@@ -39,14 +40,14 @@ int getIndexByID(Student* s)
 
 int getIndexByEmail(Student* s)
 {
-   Student* tmp;
+   Student* tmp = s;
    int i;
    char input[40];
    
    printf("Please enter an ID to search for: ");
    fgets(input, 40, stdin);
    
-   while (!strcmp(tmp->email, input) && i<100)
+   while (strcmp(tmp->email, input) && i<100)
    {
       tmp = tmp + sizeof(Student);
 	  i++;
