@@ -18,6 +18,7 @@ void sortArray(Student* s)
    // Scan for a deallocated block
    while ( (dst->allocated != 0) && (i<100) )
    {
+      dst = dst + 1;
       i++;    
    }
 
