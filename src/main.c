@@ -61,12 +61,15 @@ int main(int argc, char ** argv) {
         	case 3:	// (TODO) Module that saves the database to a file
 			
             break;
+            
          case 4:	// Module that searches for a student in the database
             viewStudent(s);
             break;
+            
          case 5: // Module that allows the user to enter a grade
             enterGrades(s);
             break;
+            
          case 6: // (TODO) Delete a student
             deleteStudent(s);
             break;
