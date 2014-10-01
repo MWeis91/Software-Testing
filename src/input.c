@@ -8,6 +8,25 @@
 #include "string.h"
 #include "search.h"
 
+void loadDB(Student* s)
+{
+   FILE* studentsdb = fopen("students.db", "r");
+
+   printf("Loading student database from students.db...\n");
+
+   fread(s, sizeof(Student), 100, studentsdb);
+}
+
+void saveDB(Student* s)
+{
+   FILE* studentsdb = fopen("students.db", "w");
+
+   printf("Saving student databse to students.db....\n");
+
+   fwrite(s, sizeof(Student), 100, studentsdb);
+}
+
+
 void newStudent(Student* S) {
 
 

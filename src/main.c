@@ -11,7 +11,7 @@
 
 #include "stdlib.h"
 #include "stdio.h"
-#include "input.h" // Links to main.h, provides typedef student(bad design)
+#include "input.h"  // Links to main.h, provides typedef student(bad design)
 #include "search.h"
 #include "delete.h"
 
@@ -55,26 +55,27 @@ int main(int argc, char ** argv) {
             newStudent(s);
             break;
         
-         case 2:	// (TODO) Module that loads a database file into memory.
-         
+         case 2:   // Module that loads a database file into memory.
+            loadDB(s);
             break;
-        	case 3:	// (TODO) Module that saves the database to a file
-			
+
+         case 3:   // Module that saves the database to a file
+            saveDB(s);
             break;
             
-         case 4:	// Module that searches for a student in the database
+         case 4:   // Module that searches for a student in the database
             viewStudent(s);
             break;
             
-         case 5: // Module that allows the user to enter a grade
+         case 5:   // Module that allows the user to enter a grade
             enterGrades(s);
             break;
             
-         case 6: // (TODO) Delete a student
+         case 6:   // Delete a student
             deleteStudent(s);
             break;
 				
-         case 7: // Exit
+         case 7:   // Exit
             terminateflag = 1;
             break;
 				
