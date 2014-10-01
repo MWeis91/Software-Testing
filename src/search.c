@@ -43,7 +43,7 @@ int getIndexByEmail(Student* s)
    int i = 0;
    char input[40];
    
-   printf("Please enter an ID to search for: ");
+   printf("Please enter an email address to search for: ");
    fgets(input, 40, stdin);
    
    while (strcmp(tmp->email, input) && i<100)
