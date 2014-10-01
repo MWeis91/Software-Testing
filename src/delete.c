@@ -13,7 +13,7 @@ void sortArray(Student* s)
 	
    int i = 0;
    Student* dst = s;
-	Student* src = NULL;
+   Student* src = NULL;
 
    // Scan for a deallocated block
    while ( (dst->allocated != 0) && (i<100) )
@@ -21,18 +21,18 @@ void sortArray(Student* s)
       i++;    
    }
 
-	// move each block down an index to fill the deallocated slot
-	while ( i < 99 )
-	{
-		// deallocated destination
-		dst = s + i*sizeof(Student);
-		// next item = source
-		src = dst + sizeof(Student);
-		// copy source data over to destination 
-		memcpy(dst, src, sizeof(Student));
-		// move to next item pair
-		i++;
-	}
+   // move each block down an index to fill the deallocated slot
+   while ( i < 99 )
+   {
+      // deallocated destination
+      dst = s + i;
+      // next item = source
+      src = dst + 1;
+      // copy source data over to destination 
+      memcpy(dst, src, sizeof(Student));
+      // move to next item pair
+      i++;
+   }
 }
 
 void deleteStudent(Student* s)
@@ -44,7 +44,7 @@ void deleteStudent(Student* s)
    // get index of student to delete
    printf("Please search for the student to delete.\n");
    index = getStudentIndex(s);
-   tmp = tmp + index * sizeof(Student);
+   tmp = tmp + index;
    
    printf("Are you sure you want to delete this student? [y/n]: ");
    scanf("%s", &confirmation);
@@ -56,7 +56,7 @@ void deleteStudent(Student* s)
       tmp->allocated=0;
    
       // eliminate the deallocated entry from our array
-		sortArray(s);
+      sortArray(s);
    }
     
 }
