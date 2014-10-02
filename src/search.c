@@ -104,8 +104,8 @@ void viewStudent(Student *s)
    
    // display record
    printf("\n\tName: %s"
-         "\n\tID: %s"
          "\n\tEmail: %s"
+         "\n\tUID: %s"
          "\n\tEssay 1: %d"
          "\n\tEssay 2: %d"
          "\n\tTerm Project: %d\n\n", tmp->name, tmp->ID, tmp->email, tmp->essayGrade1, tmp->essayGrade2, tmp->termProject);

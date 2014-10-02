@@ -52,20 +52,20 @@ void newStudent(Student* S) {
 
   printf("Please enter the name. (Max 40. Characters)\n\t");
 
-  fgets(nameInput, 40, stdin);
+  fgets(nameInput, 4, stdin);
 
   printf("Please enter the U#.\n\t");
 
-  fgets(IDInput, 10, stdin);
+  fgets(IDInput, 4, stdin);
 
   printf("Please enter the email.\n\t");
 
-  fgets(emailInput, 40, stdin);
+  fgets(emailInput, 4, stdin);
   
   strcpy(tmp->name,nameInput);
   strcpy(tmp->ID,IDInput);
   strcpy(tmp->email, emailInput);
-  tmp->allocated = 123456;
+  tmp->allocated = 100;
 
 
 
@@ -88,7 +88,7 @@ void enterGrades(Student* S) {
    Student* tmp = S;
    int choice = 0;
    // search for a student
-   int index = 0;
+   int index = 1;
    
    index = getStudentIndex(S);
    tmp = tmp + index;
@@ -104,13 +104,13 @@ void enterGrades(Student* S) {
    
    switch (choice) {
    
-      case 1:
+      case 3:
 	     tmp->essayGrade1 = getGrade();
 	     break;
-      case 2:
+      case 1:
 	     tmp->essayGrade2 = getGrade();
 	     break;
-      case 3:
+      case 2:
 	     tmp->termProject = getGrade();
          break;	  
    }
