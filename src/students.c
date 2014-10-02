@@ -36,13 +36,9 @@ void enterGrades(Student* S);
 void sortArray(Student* s);
 void deleteStudent(Student* s);
 
-
+// Scan for a deallocated block, then move all entries after that down a block to eliminate the removed Student.
 void sortArray(Student* s)
 {
-   // scan for deallocated block followed by allocated data blocks
-   // move everything after that down a block
-   // repeat
-	
    int i = 0;
    Student* dst = s;
    Student* src = NULL;
@@ -68,6 +64,7 @@ void sortArray(Student* s)
    }
 }
 
+// Search for a student to delete from the database.
 void deleteStudent(Student* s)
 {
    int index = 0;
@@ -94,6 +91,7 @@ void deleteStudent(Student* s)
     
 }
 
+// Load Student database from students.db
 void loadDB(Student* s)
 {
    FILE* studentsdb = fopen("students.db", "r");
@@ -103,6 +101,7 @@ void loadDB(Student* s)
    fread(s, sizeof(Student), 100, studentsdb);
 }
 
+// Save Student database to students.db
 void saveDB(Student* s)
 {
    FILE* studentsdb = fopen("students.db", "w");
@@ -112,7 +111,7 @@ void saveDB(Student* s)
    fwrite(s, sizeof(Student), 100, studentsdb);
 }
 
-
+// Add a new student to the database in memory.
 void newStudent(Student* S)
 {
   int i = 0;
@@ -154,6 +153,7 @@ void newStudent(Student* S)
   
 }
 
+// Input a grade for an assignment, and return that grade.
 int getGrade()
 {
 
@@ -165,6 +165,7 @@ int getGrade()
    return grade;
    
 }
+// Choose a grade to modify.
 void enterGrades(Student* S)
 {
 
@@ -179,8 +180,8 @@ void enterGrades(Student* S)
    // Choose grade to change.
    printf("\nChoose a grade to change: "
          "\n\t1. Essay 1"
-		 "\n\t2. Essay 2"
-		 "\n\t3. Term Project\n\t");
+         "\n\t2. Essay 2"
+	 "\n\t3. Term Project\n\t");
 		 
    scanf("%d", &choice);
    getchar();
@@ -201,7 +202,7 @@ void enterGrades(Student* S)
    // Automatically save database?
 }
 
-
+// Search for students by name
 int getIndexByName(Student* s)
 {
    Student* tmp = s;
@@ -220,6 +221,7 @@ int getIndexByName(Student* s)
    // 100 = ERROR!
 }
 
+// Search for students by ID
 int getIndexByID(Student* s)
 {
    Student* tmp = s;
@@ -237,6 +239,7 @@ int getIndexByID(Student* s)
    return i;
 }
 
+// Search for students by email address
 int getIndexByEmail(Student* s)
 {
    Student* tmp = s;
@@ -254,6 +257,7 @@ int getIndexByEmail(Student* s)
    return i;
 }
 
+// Search for a student by name, ID, or email
 int getStudentIndex(Student* s)
 {
    int choice = 0;
@@ -285,6 +289,7 @@ int getStudentIndex(Student* s)
       return -1;
 }
 
+// Find and display a student's information and grades
 void viewStudent(Student *s)
 {
    Student* tmp = s;
