@@ -1,6 +1,10 @@
+
+
+
 #include "main.h"
 #include "search.h"
 #include "stdio.h"
+
 
 int getIndexByName(Student* s)
 {
@@ -17,7 +21,7 @@ int getIndexByName(Student* s)
       i++;
    }
    return i;
-   // 100 = ERROR!
+
 }
 
 int getIndexByID(Student* s)
@@ -31,7 +35,7 @@ int getIndexByID(Student* s)
    
    while (strcmp(tmp->ID, input) && i<100)
    {
-      tmp = tmp + 1;
+     tmp++;
       i++;
    }
    return i;

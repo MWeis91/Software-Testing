@@ -2,6 +2,7 @@
 #define MAIN_H
 
 
+
 // Globally defined Student structure.
 //
 // As long as main.c includes input.h (or another header file), this *should* be defined.

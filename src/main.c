@@ -9,9 +9,10 @@
 
 
 
+
 #include "stdlib.h"
 #include "stdio.h"
-#include "input.h"  // Links to main.h, provides typedef student(bad design)
+#include "input.h"  // Links to main.h, provides typedef student
 #include "search.h"
 #include "delete.h"
 
@@ -39,18 +40,22 @@ int menu(void){
 
 int main(int argc, char ** argv) {
 	
-   // array of type Student
-   Student *s = malloc(sizeof(Student) * 100);
-   // zero the newly allocated memory
-   memset(s, 0, sizeof(Student)*100);
-
    int menuOpt;
    int terminateflag = 0;
 	
-   while (!terminateflag)
+   while (!terminateflag) //while program is running
    {
       menuOpt = menu();
       switch (menuOpt){
+
+
+	// array of type Student
+	Student *s = malloc(sizeof(Student) * 100);
+
+	// zero the newly allocated memory
+	memset(s, 0, sizeof(Student)*100);
+
+
          case 1:	// Module that handles entering the student's basic information (name, email, UID#)
             newStudent(s);
             break;

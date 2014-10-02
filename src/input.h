@@ -2,6 +2,7 @@
 
 #include "main.h" // provides typedef student for all
 
+
 void loadDB(Student* s);
 void saveDB(Student* s);
 

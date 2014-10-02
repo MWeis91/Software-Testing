@@ -1,4 +1,7 @@
 // This program will delete a student from the database, freeing up the slot for other entries.
+
+
+
 #include "search.h"
 #include "main.h"
 #include "stdio.h"

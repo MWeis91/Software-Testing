@@ -2,11 +2,14 @@
 // This program handles input of new students, and input of grades(separately)(TODO).
 
 
+
 #include "stdlib.h"
 #include "stdio.h"
 #include "input.h"
 #include "string.h"
 #include "search.h"
+
+
 
 void loadDB(Student* s)
 {
