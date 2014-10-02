@@ -226,7 +226,7 @@ int getIndexByID(Student* s)
 {
    Student* tmp = s;
    int i = 0;
-   char input[10];
+   char input[11];
    
    printf("Please enter an ID to search for: ");
    fgets(input, 10, stdin);
