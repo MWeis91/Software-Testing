@@ -53,7 +53,7 @@ void newStudent(Student* S) {
 
   printf("Please enter the U#.\n\t");
 
-  fgets(IDInput, 10, stdin);
+  fgets(IDInput, 11, stdin); //Changed to 11, to allow for UXXXXXXXX-style input
 
   printf("Please enter the email.\n\t");
 
